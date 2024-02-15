@@ -9,31 +9,31 @@ on:
     - cron: '0 10 * * *'
 
 jobs:
-  # check:
-  #   runs-on: ubuntu-latest
-  #   outputs:
-  #     iosevkaVersion: ${{ steps.iosevka-version.outputs.version }}
-  #     selfVersion: ${{ steps.self-version.outputs.version }}
-  #   steps: 
-  #     - name: Get Iosevka release version
-  #       id: iosevka-version
-  #       run: |
-  #         curl -sL https://api.github.com/repos/be5invis/Iosevka/releases/latest | \
-  #         jq -r ".tag_name" | \
-  #         sed 's/^v//' | \
-  #         xargs -I {} echo "version={}" >> $GITHUB_OUTPUT
-  #     - name: Get Self release version
-  #       env:
-  #         REPO: ${{ github.action_repository }}
-  #       id: self-version
-  #       run: |
-  #         curl -sL https://api.github.com/repos/$REPO/releases/latest | \
-  #         jq -r ".tag_name" | \
-  #         sed 's/^v//' | \
-  #         xargs -I {} echo "version={}" >> $GITHUB_OUTPUT
+  check:
+    runs-on: ubuntu-latest
+    outputs:
+      iosevkaVersion: ${{ steps.iosevka-version.outputs.version }}
+      selfVersion: ${{ steps.self-version.outputs.version }}
+    steps: 
+      - name: Get Iosevka release version
+        id: iosevka-version
+        run: |
+          curl -sL https://api.github.com/repos/be5invis/Iosevka/releases/latest | \
+          jq -r ".tag_name" | \
+          sed 's/^v//' | \
+          xargs -I {} echo "version={}" >> $GITHUB_OUTPUT
+      - name: Get Self release version
+        env:
+          REPO: ${{ github.action_repository }}
+        id: self-version
+        run: |
+          curl -sL https://api.github.com/repos/$REPO/releases/latest | \
+          jq -r ".tag_name" | \
+          sed 's/^v//' | \
+          xargs -I {} echo "version={}" >> $GITHUB_OUTPUT
   build:
-    # needs: check
-    # if: ${{ jobs.check.outputs.iosevkaVersion != jobs.check.outputs.selfVersion }}
+    needs: check
+    if: ${{ jobs.check.outputs.iosevkaVersion != jobs.check.outputs.selfVersion }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
