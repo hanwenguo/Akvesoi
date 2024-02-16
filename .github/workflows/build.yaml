@@ -49,18 +49,30 @@ jobs:
           curl -L "https://github.com/be5invis/Iosevka/archive/refs/tags/v$VERSION.tar.gz" | \
           tar xz
           mv Iosevka-* src
+      - name: Cache Built Fonts
+        id: cache
+        uses: actions/cache@v3
+        with:
+          path: ./src/release-archives
+          key: ${{ runner.os }}-build-${{ needs.check.outputs.iosevkaVersion }}
       - name: Build Custom font
+        if: ${{ steps.cache.outputs.cache-hit != 'true' }}
         run: |
           cp private-build-plans.toml src/private-build-plans.toml
           cd src
           npm install
           sed -i '/release = true/d' build-plans.toml
           npm run build -- release:archives
+      # - name: Create tag
+      #   uses: rickstaa/action-create-tag@v1
+      #   with:
+      #     tag: ${{ format('v{0}', needs.check.outputs.iosevkaVersion) }}
       - name: Create Release
         env:
           VERSION: ${{ needs.check.outputs.iosevkaVersion }}
         uses: softprops/action-gh-release@v1
         with:
+          tag_name: ${{ format('refs/tags/v{0}', needs.check.outputs.iosevkaVersion) }}
           name: ${{ format('v{0}', needs.check.outputs.iosevkaVersion) }}
           body: |
             <table>
