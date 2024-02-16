@@ -31,7 +31,7 @@ jobs:
           xargs -I {} echo "version={}" >> $GITHUB_OUTPUT
   build:
     needs: check
-    if: ${{ needs.check.outputs.iosevkaVersion != needs.check.outputs.selfVersion }}
+    if: ${{ needs.check.outputs.iosevkaVersion != needs.check.outputs.selfVersion || github.event_name == 'workflow_dispatch' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
@@ -41,7 +41,7 @@ jobs:
         with:
           node-version: '>=18.0.0'
       - name: Get system packages
-        run: sudo apt-get install ttfautohint libttfautohint-dev
+        run: sudo apt-get update && sudo apt-get install ttfautohint libttfautohint-dev
       - name: Fetch Iosevka release
         env:
           VERSION: ${{ needs.check.outputs.iosevkaVersion }}
@@ -65,12 +65,21 @@ jobs:
           cd src
           npm install
           sed -i '/release = true/d' build-plans.toml
-          npm run build -- release:archives
+          # npm run build -- release:archives
+          npm run build -- contents::Akvesoi
+          npm run build -- contents::AkvesoiTerm
+          npm run build -- contents::AkvesoiMono
       - name: Create built fonts artifact
         uses: actions/upload-artifact@v4
         with:
           name: built-fonts
           path: ./src/dist/
+      - name: Build release archives
+        if: ${{ steps.cache.outputs.cache-hit != 'true' }}
+        continue-on-error: true
+        run: |
+          cd src
+          npm run build -- release:archives
       - name: Create release archives artifact
         uses: actions/upload-artifact@v4
         with:
@@ -80,7 +89,13 @@ jobs:
         uses: rickstaa/action-create-tag@v1
         with:
           tag: ${{ format('v{0}', needs.check.outputs.iosevkaVersion) }}
-      - name: Create Release
+          force_push_tag: true
+      - name: Create release archives artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-archives
+          path: ./src/release-archives/
+      - name: Create release
         env:
           VERSION: ${{ needs.check.outputs.iosevkaVersion }}
         uses: softprops/action-gh-release@v1
