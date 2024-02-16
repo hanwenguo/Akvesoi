@@ -66,10 +66,10 @@ jobs:
           npm install
           sed -i '/release = true/d' build-plans.toml
           npm run build -- release:archives
-      # - name: Create tag
-      #   uses: rickstaa/action-create-tag@v1
-      #   with:
-      #     tag: ${{ format('v{0}', needs.check.outputs.iosevkaVersion) }}
+      - name: Create tag
+        uses: rickstaa/action-create-tag@v1
+        with:
+          tag: ${{ format('v{0}', needs.check.outputs.iosevkaVersion) }}
       - name: Create Release
         env:
           VERSION: ${{ needs.check.outputs.iosevkaVersion }}
