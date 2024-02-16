@@ -53,7 +53,9 @@ jobs:
         id: cache
         uses: actions/cache@v3
         with:
-          path: ./src/release-archives
+          path: |
+            ./src/dist
+            ./src/release-archives
           key: ${{ runner.os }}-build-${{ needs.check.outputs.iosevkaVersion }}
       - name: Build Custom font
         if: ${{ steps.cache.outputs.cache-hit != 'true' }}
