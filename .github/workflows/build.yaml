@@ -57,6 +57,7 @@ jobs:
           key: ${{ runner.os }}-build-${{ needs.check.outputs.iosevkaVersion }}
       - name: Build Custom font
         if: ${{ steps.cache.outputs.cache-hit != 'true' }}
+        continue-on-error: true
         run: |
           cp private-build-plans.toml src/private-build-plans.toml
           cd src
