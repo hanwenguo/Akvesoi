@@ -58,17 +58,15 @@ jobs:
             ./src/release-archives
           key: ${{ runner.os }}-build-${{ needs.check.outputs.iosevkaVersion }}
       - name: Build Custom font
-        if: ${{ steps.cache.outputs.cache-hit != 'true' }}
-        continue-on-error: true
         run: |
           cp private-build-plans.toml src/private-build-plans.toml
           cd src
           npm install
           sed -i '/release = true/d' build-plans.toml
-          # npm run build -- release:archives
-          npm run build -- contents::Akvesoi
+          npm run build -- contents::AkvesoiCode
           npm run build -- contents::AkvesoiTerm
           npm run build -- contents::AkvesoiMono
+          npm run build -- contents::AkvesoiType
       - name: Create built fonts artifact
         uses: actions/upload-artifact@v4
         with:
@@ -76,8 +74,6 @@ jobs:
           path: ./src/dist/
           overwrite: true
       - name: Build release archives
-        if: ${{ steps.cache.outputs.cache-hit != 'true' }}
-        continue-on-error: true
         run: |
           cd src
           npm run build -- release:archives
@@ -103,19 +99,20 @@ jobs:
             <table>
             <tr><td colspan="3"><b>&#x1F4E6; Akvesoi</b></td><td><b><a href="https://github.com/g-hanwen/Akvesoi/releases/download/v${{ needs.check.outputs.iosevkaVersion }}/SuperTTC-Akvesoi-${{ needs.check.outputs.iosevkaVersion }}.zip">Super TTC</b></td><td><b><a href="https://github.com/g-hanwen/Akvesoi/releases/download/v${{ needs.check.outputs.iosevkaVersion }}/PkgTTC-Akvesoi-${{ needs.check.outputs.iosevkaVersion }}.zip">TTC</b></td><td colspan="2">&nbsp;</td></tr>
             <tr><td><b>&nbsp;&nbsp;└ Sub-packages</b></td><td><b>Spacing</b></td><td><b>Ligatures</b></td><td colspan="4"><b>Downloads</b></td></tr>
-            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;├&nbsp;<b>Akvesoi</b></td><td>Default</td><td><b>Yes</b></td><td><b><a href="https://github.com/g-hanwen/Akvesoi/releases/download/v${{ needs.check.outputs.iosevkaVersion }}/SuperTTC-SGr-Akvesoi-${{ needs.check.outputs.iosevkaVersion }}.zip">Super TTC</a></b></td><td><b><a href="https://github.com/g-hanwen/Akvesoi/releases/download/v${{ needs.check.outputs.iosevkaVersion }}/PkgTTC-SGr-Akvesoi-${{ needs.check.outputs.iosevkaVersion }}.zip">TTC</a></b></td><td><b><a href="https://github.com/g-hanwen/Akvesoi/releases/download/v${{ needs.check.outputs.iosevkaVersion }}/PkgTTF-Akvesoi-${{ needs.check.outputs.iosevkaVersion }}.zip">TTF</a></b>&nbsp;(<b><a href="https://github.com/g-hanwen/Akvesoi/releases/download/v${{ needs.check.outputs.iosevkaVersion }}/PkgTTF-Unhinted-Akvesoi-${{ needs.check.outputs.iosevkaVersion }}.zip">Unhinted</a></b>)</td><td><b><a href="https://github.com/g-hanwen/Akvesoi/releases/download/v${{ needs.check.outputs.iosevkaVersion }}/PkgWebFont-Akvesoi-${{ needs.check.outputs.iosevkaVersion }}.zip">WebFont</a></b>&nbsp;(<b><a href="https://github.com/g-hanwen/Akvesoi/releases/download/v${{ needs.check.outputs.iosevkaVersion }}/PkgWebFont-Unhinted-Akvesoi-${{ needs.check.outputs.iosevkaVersion }}.zip">Unhinted</a></b>)</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;├&nbsp;<b>Akvesoi Code</b></td><td>Default</td><td><b>Yes</b></td><td><b><a href="https://github.com/g-hanwen/Akvesoi/releases/download/v${{ needs.check.outputs.iosevkaVersion }}/SuperTTC-SGr-AkvesoiCode-${{ needs.check.outputs.iosevkaVersion }}.zip">Super TTC</a></b></td><td><b><a href="https://github.com/g-hanwen/Akvesoi/releases/download/v${{ needs.check.outputs.iosevkaVersion }}/PkgTTC-SGr-AkvesoiCode-${{ needs.check.outputs.iosevkaVersion }}.zip">TTC</a></b></td><td><b><a href="https://github.com/g-hanwen/Akvesoi/releases/download/v${{ needs.check.outputs.iosevkaVersion }}/PkgTTF-AkvesoiCode-${{ needs.check.outputs.iosevkaVersion }}.zip">TTF</a></b>&nbsp;(<b><a href="https://github.com/g-hanwen/Akvesoi/releases/download/v${{ needs.check.outputs.iosevkaVersion }}/PkgTTF-Unhinted-AkvesoiCode-${{ needs.check.outputs.iosevkaVersion }}.zip">Unhinted</a></b>)</td><td><b><a href="https://github.com/g-hanwen/Akvesoi/releases/download/v${{ needs.check.outputs.iosevkaVersion }}/PkgWebFont-AkvesoiCode-${{ needs.check.outputs.iosevkaVersion }}.zip">WebFont</a></b>&nbsp;(<b><a href="https://github.com/g-hanwen/Akvesoi/releases/download/v${{ needs.check.outputs.iosevkaVersion }}/PkgWebFont-Unhinted-AkvesoiCode-${{ needs.check.outputs.iosevkaVersion }}.zip">Unhinted</a></b>)</td></tr>
             <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;├&nbsp;<b>Akvesoi Term</b></td><td>Terminal</td><td>No</td><td><b><a href="https://github.com/g-hanwen/Akvesoi/releases/download/v${{ needs.check.outputs.iosevkaVersion }}/SuperTTC-SGr-AkvesoiTerm-${{ needs.check.outputs.iosevkaVersion }}.zip">Super TTC</a></b></td><td><b><a href="https://github.com/g-hanwen/Akvesoi/releases/download/v${{ needs.check.outputs.iosevkaVersion }}/PkgTTC-SGr-AkvesoiTerm-${{ needs.check.outputs.iosevkaVersion }}.zip">TTC</a></b></td><td><b><a href="https://github.com/g-hanwen/Akvesoi/releases/download/v${{ needs.check.outputs.iosevkaVersion }}/PkgTTF-AkvesoiTerm-${{ needs.check.outputs.iosevkaVersion }}.zip">TTF</a></b>&nbsp;(<b><a href="https://github.com/g-hanwen/Akvesoi/releases/download/v${{ needs.check.outputs.iosevkaVersion }}/PkgTTF-Unhinted-AkvesoiTerm-${{ needs.check.outputs.iosevkaVersion }}.zip">Unhinted</a></b>)</td><td><b><a href="https://github.com/g-hanwen/Akvesoi/releases/download/v${{ needs.check.outputs.iosevkaVersion }}/PkgWebFont-AkvesoiTerm-${{ needs.check.outputs.iosevkaVersion }}.zip">WebFont</a></b>&nbsp;(<b><a href="https://github.com/g-hanwen/Akvesoi/releases/download/v${{ needs.check.outputs.iosevkaVersion }}/PkgWebFont-Unhinted-AkvesoiTerm-${{ needs.check.outputs.iosevkaVersion }}.zip">Unhinted</a></b>)</td></tr>
             <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;└&nbsp;<b>Akvesoi Mono</b></td><td>Fixed</td><td>No</td><td><b><a href="https://github.com/g-hanwen/Akvesoi/releases/download/v${{ needs.check.outputs.iosevkaVersion }}/SuperTTC-SGr-AkvesoiFixed-${{ needs.check.outputs.iosevkaVersion }}.zip">Super TTC</a></b></td><td><b><a href="https://github.com/g-hanwen/Akvesoi/releases/download/v${{ needs.check.outputs.iosevkaVersion }}/PkgTTC-SGr-AkvesoiFixed-${{ needs.check.outputs.iosevkaVersion }}.zip">TTC</a></b></td><td><b><a href="https://github.com/g-hanwen/Akvesoi/releases/download/v${{ needs.check.outputs.iosevkaVersion }}/PkgTTF-AkvesoiFixed-${{ needs.check.outputs.iosevkaVersion }}.zip">TTF</a></b>&nbsp;(<b><a href="https://github.com/g-hanwen/Akvesoi/releases/download/v${{ needs.check.outputs.iosevkaVersion }}/PkgTTF-Unhinted-AkvesoiFixed-${{ needs.check.outputs.iosevkaVersion }}.zip">Unhinted</a></b>)</td><td><b><a href="https://github.com/g-hanwen/Akvesoi/releases/download/v${{ needs.check.outputs.iosevkaVersion }}/PkgWebFont-AkvesoiFixed-${{ needs.check.outputs.iosevkaVersion }}.zip">WebFont</a></b>&nbsp;(<b><a href="https://github.com/g-hanwen/Akvesoi/releases/download/v${{ needs.check.outputs.iosevkaVersion }}/PkgWebFont-Unhinted-AkvesoiFixed-${{ needs.check.outputs.iosevkaVersion }}.zip">Unhinted</a></b>)</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;└&nbsp;<b>Akvesoi Type</b></td><td>Quasi-Proportional (Extension Only)</td><td>No</td><td><b><a href="https://github.com/g-hanwen/Akvesoi/releases/download/v${{ needs.check.outputs.iosevkaVersion }}/SuperTTC-SGr-AkvesoiFixed-${{ needs.check.outputs.iosevkaVersion }}.zip">Super TTC</a></b></td><td><b><a href="https://github.com/g-hanwen/Akvesoi/releases/download/v${{ needs.check.outputs.iosevkaVersion }}/PkgTTC-SGr-AkvesoiFixed-${{ needs.check.outputs.iosevkaVersion }}.zip">TTC</a></b></td><td><b><a href="https://github.com/g-hanwen/Akvesoi/releases/download/v${{ needs.check.outputs.iosevkaVersion }}/PkgTTF-AkvesoiFixed-${{ needs.check.outputs.iosevkaVersion }}.zip">TTF</a></b>&nbsp;(<b><a href="https://github.com/g-hanwen/Akvesoi/releases/download/v${{ needs.check.outputs.iosevkaVersion }}/PkgTTF-Unhinted-AkvesoiFixed-${{ needs.check.outputs.iosevkaVersion }}.zip">Unhinted</a></b>)</td><td><b><a href="https://github.com/g-hanwen/Akvesoi/releases/download/v${{ needs.check.outputs.iosevkaVersion }}/PkgWebFont-AkvesoiFixed-${{ needs.check.outputs.iosevkaVersion }}.zip">WebFont</a></b>&nbsp;(<b><a href="https://github.com/g-hanwen/Akvesoi/releases/download/v${{ needs.check.outputs.iosevkaVersion }}/PkgWebFont-Unhinted-AkvesoiFixed-${{ needs.check.outputs.iosevkaVersion }}.zip">Unhinted</a></b>)</td></tr>
             </table>
           files: |
-            src/release-archives/SuperTTC-Akvesoi-${{ needs.check.outputs.iosevkaVersion }}.zip
-            src/release-archives/PkgTTC-Akvesoi-${{ needs.check.outputs.iosevkaVersion }}.zip
-            src/release-archives/SuperTTC-SGr-Akvesoi-${{ needs.check.outputs.iosevkaVersion }}.zip
-            src/release-archives/PkgTTC-SGr-Akvesoi-${{ needs.check.outputs.iosevkaVersion }}.zip
-            src/release-archives/PkgTTF-Akvesoi-${{ needs.check.outputs.iosevkaVersion }}.zip
-            src/release-archives/PkgTTF-Unhinted-Akvesoi-${{ needs.check.outputs.iosevkaVersion }}.zip
-            src/release-archives/PkgWebFont-Akvesoi-${{ needs.check.outputs.iosevkaVersion }}.zip
-            src/release-archives/PkgWebFont-Unhinted-Akvesoi-${{ needs.check.outputs.iosevkaVersion }}.zip
+            src/release-archives/SuperTTC-AkvesoiCode-${{ needs.check.outputs.iosevkaVersion }}.zip
+            src/release-archives/PkgTTC-AkvesoiCode-${{ needs.check.outputs.iosevkaVersion }}.zip
+            src/release-archives/SuperTTC-SGr-AkvesoiCode-${{ needs.check.outputs.iosevkaVersion }}.zip
+            src/release-archives/PkgTTC-SGr-AkvesoiCode-${{ needs.check.outputs.iosevkaVersion }}.zip
+            src/release-archives/PkgTTF-AkvesoiCode-${{ needs.check.outputs.iosevkaVersion }}.zip
+            src/release-archives/PkgTTF-Unhinted-AkvesoiCode-${{ needs.check.outputs.iosevkaVersion }}.zip
+            src/release-archives/PkgWebFont-AkvesoiCode-${{ needs.check.outputs.iosevkaVersion }}.zip
+            src/release-archives/PkgWebFont-Unhinted-AkvesoiCode-${{ needs.check.outputs.iosevkaVersion }}.zip
             src/release-archives/SuperTTC-SGr-AkvesoiTerm-${{ needs.check.outputs.iosevkaVersion }}.zip
             src/release-archives/PkgTTC-SGr-AkvesoiTerm-${{ needs.check.outputs.iosevkaVersion }}.zip
             src/release-archives/PkgTTF-AkvesoiTerm-${{ needs.check.outputs.iosevkaVersion }}.zip
@@ -128,4 +125,10 @@ jobs:
             src/release-archives/PkgTTF-Unhinted-AkvesoiMono-${{ needs.check.outputs.iosevkaVersion }}.zip
             src/release-archives/PkgWebFont-AkvesoiMono-${{ needs.check.outputs.iosevkaVersion }}.zip
             src/release-archives/PkgWebFont-Unhinted-AkvesoiMono-${{ needs.check.outputs.iosevkaVersion }}.zip
+            src/release-archives/SuperTTC-SGr-AkvesoiType-${{ needs.check.outputs.iosevkaVersion }}.zip
+            src/release-archives/PkgTTC-SGr-AkvesoiType-${{ needs.check.outputs.iosevkaVersion }}.zip
+            src/release-archives/PkgTTF-AkvesoiType-${{ needs.check.outputs.iosevkaVersion }}.zip
+            src/release-archives/PkgTTF-Unhinted-AkvesoiType-${{ needs.check.outputs.iosevkaVersion }}.zip
+            src/release-archives/PkgWebFont-AkvesoiType-${{ needs.check.outputs.iosevkaVersion }}.zip
+            src/release-archives/PkgWebFont-Unhinted-AkvesoiType-${{ needs.check.outputs.iosevkaVersion }}.zip
 

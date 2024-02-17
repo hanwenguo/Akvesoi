@@ -1,13 +1,15 @@
-[buildPlans.AkvesoiMono]
-family = "Akvesoi Mono"
+[buildPlans.AkvesoiCode]
+family = "Akvesoi Code"
+desc = "Default"
+buildCharMap = true
 snapshotFamily = "Akvesoi"
-snapshotFeature = {"NWID" = 1}
-spacing = "fixed"
+snapshotFeature = {"NWID" = 0}
+spacing = "normal"
 serifs = "sans"
 noCvSs = false
-exportGlyphNames = true
+exportGlyphNames = false
 
-[buildPlans.AkvesoiMono.variants.design]
+[buildPlans.AkvesoiCode.variants.design]
 capital-d = "more-rounded-serifless"
 capital-j = "serifless"
 capital-w = "straight-flat-top-serifless"
@@ -33,12 +35,15 @@ micro-sign = "tailed-serifless"
 lig-equal-chain = "with-notch"
 lig-plus-chain = "without-notch"
 
-[buildPlans.AkvesoiMono.widths.Condensed]
+[buildPlans.AkvesoiCode.ligations]
+inherits = "dlig"
+
+[buildPlans.AkvesoiCode.widths.Condensed]
 shape = 500
 menu = 3
 css = "condensed"
 
-[buildPlans.AkvesoiMono.widths.Normal]
+[buildPlans.AkvesoiCode.widths.Normal]
 shape = 600
 menu = 5
 css = "normal"
@@ -88,17 +93,17 @@ shape = 600
 menu = 5
 css = "normal"
 
-[buildPlans.Akvesoi]
-family = "Akvesoi"
-desc = "Default"
+[buildPlans.AkvesoiMono]
+family = "Akvesoi Mono"
 snapshotFamily = "Akvesoi"
-snapshotFeature = {"NWID" = 0}
-spacing = "normal"
+snapshotFeature = {"NWID" = 1}
+spacing = "fixed"
 serifs = "sans"
 noCvSs = false
-exportGlyphNames = false
+exportGlyphNames = true
+noLigation = true
 
-[buildPlans.Akvesoi.variants.design]
+[buildPlans.AkvesoiMono.variants.design]
 capital-d = "more-rounded-serifless"
 capital-j = "serifless"
 capital-w = "straight-flat-top-serifless"
@@ -121,22 +126,60 @@ ampersand = "upper-open"
 at = "compact"
 percent = "rings-continuous-slash"
 micro-sign = "tailed-serifless"
-lig-equal-chain = "with-notch"
-lig-plus-chain = "without-notch"
 
-  [buildPlans.Akvesoi.ligations]
-  inherits = "dlig"
-
-[buildPlans.Akvesoi.widths.Condensed]
+[buildPlans.AkvesoiMono.widths.Condensed]
 shape = 500
 menu = 3
 css = "condensed"
 
-[buildPlans.Akvesoi.widths.Normal]
+[buildPlans.AkvesoiMono.widths.Normal]
+shape = 600
+menu = 5
+css = "normal"
+
+[buildPlans.AkvesoiType]
+family = "Akvesoi Type"
+desc = "Slab-serif"
+spacing = "quasi-proportional-extension-only"
+serifs = "slab"
+snapshotFamily = 'Akvesoi'
+snapshotFeature = {"NWID" = 0}
+noCvSs = false
+exportGlyphNames = false
+
+[buildPlans.AkvesoiType.variants.design]
+capital-d = "more-rounded-bilateral-serifed"
+capital-j = "serifed-both-sides"
+capital-w = "straight-flat-top-serifed"
+a = "double-storey-hook-inward-serifed-tailed"
+g = "single-storey-serifed"
+i = "tailed-serifed"
+j = "serifed"
+l = "tailed-serifed"
+one = "base"
+five = "oblique-arched"
+six = "straight-bar"
+eight = "crossing-asymmetric"
+punctuation-dot = "square"
+brace = "straight"
+guillemet = "straight"
+number-sign = "upright"
+ampersand = "upper-open"
+at = "compact"
+percent = "rings-continuous-slash"
+lig-equal-chain = "with-notch"
+lig-plus-chain = "without-notch"
+
+[buildPlans.AkvesoiType.widths.Condensed]
+shape = 500
+menu = 3
+css = "condensed"
+
+[buildPlans.AkvesoiType.widths.Normal]
 shape = 600
 menu = 5
 css = "normal"
 
 [collectPlans.Akvesoi]
 release = true
-from = ["Akvesoi", "AkvesoiTerm", "AkvesoiMono"]
+from = ["AkvesoiCode", "AkvesoiTerm", "AkvesoiMono", "AkvesoiType"]
