@@ -86,17 +86,12 @@ jobs:
         with:
           name: release-archives
           path: ./src/release-archives/
+          overwrite: true
       - name: Create tag
         uses: rickstaa/action-create-tag@v1
         with:
           tag: ${{ format('v{0}', needs.check.outputs.iosevkaVersion) }}
           force_push_tag: true
-      - name: Create release archives artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: release-archives
-          path: ./src/release-archives/
-          overwrite: true
       - name: Create release
         env:
           VERSION: ${{ needs.check.outputs.iosevkaVersion }}
