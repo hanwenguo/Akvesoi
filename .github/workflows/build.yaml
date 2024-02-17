@@ -56,6 +56,7 @@ jobs:
           path: |
             ./src/dist
             ./src/release-archives
+            ./src/packages
           key: ${{ runner.os }}-build-${{ needs.check.outputs.iosevkaVersion }}
       - name: Build Custom font
         run: |
@@ -63,19 +64,6 @@ jobs:
           cd src
           npm install
           sed -i '/release = true/d' build-plans.toml
-          npm run build -- contents::AkvesoiCode
-          npm run build -- contents::AkvesoiTerm
-          npm run build -- contents::AkvesoiMono
-          npm run build -- contents::AkvesoiType
-      - name: Create built fonts artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: built-fonts
-          path: ./src/dist/
-          overwrite: true
-      - name: Build release archives
-        run: |
-          cd src
           npm run build -- release:archives
       - name: Create release archives artifact
         uses: actions/upload-artifact@v4
