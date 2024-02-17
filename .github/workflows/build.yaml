@@ -74,6 +74,7 @@ jobs:
         with:
           name: built-fonts
           path: ./src/dist/
+          overwrite: true
       - name: Build release archives
         if: ${{ steps.cache.outputs.cache-hit != 'true' }}
         continue-on-error: true
@@ -95,6 +96,7 @@ jobs:
         with:
           name: release-archives
           path: ./src/release-archives/
+          overwrite: true
       - name: Create release
         env:
           VERSION: ${{ needs.check.outputs.iosevkaVersion }}
