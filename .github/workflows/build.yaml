@@ -22,7 +22,7 @@ jobs:
           xargs -I {} echo "version={}" >> $GITHUB_OUTPUT
       - name: Get Self release version
         env:
-          REPO: ${{ github.action_repository }}
+          REPO: ${{ github.repository }}
         id: self-version
         run: |
           curl -sL https://api.github.com/repos/$REPO/releases/latest | \
