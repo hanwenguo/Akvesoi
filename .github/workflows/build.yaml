@@ -93,8 +93,8 @@ jobs:
             <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;└&nbsp;<b>Akvesoi Type</b></td><td>Quasi-Proportional (Extension Only)</td><td>No</td><td><b><a href="https://github.com/g-hanwen/Akvesoi/releases/download/v${{ needs.check.outputs.iosevkaVersion }}/SuperTTC-SGr-AkvesoiType-${{ needs.check.outputs.iosevkaVersion }}.zip">Super TTC</a></b></td><td><b><a href="https://github.com/g-hanwen/Akvesoi/releases/download/v${{ needs.check.outputs.iosevkaVersion }}/PkgTTC-SGr-AkvesoiType-${{ needs.check.outputs.iosevkaVersion }}.zip">TTC</a></b></td><td><b><a href="https://github.com/g-hanwen/Akvesoi/releases/download/v${{ needs.check.outputs.iosevkaVersion }}/PkgTTF-AkvesoiType-${{ needs.check.outputs.iosevkaVersion }}.zip">TTF</a></b>&nbsp;(<b><a href="https://github.com/g-hanwen/Akvesoi/releases/download/v${{ needs.check.outputs.iosevkaVersion }}/PkgTTF-Unhinted-AkvesoiType-${{ needs.check.outputs.iosevkaVersion }}.zip">Unhinted</a></b>)</td><td><b><a href="https://github.com/g-hanwen/Akvesoi/releases/download/v${{ needs.check.outputs.iosevkaVersion }}/PkgWebFont-AkvesoiType-${{ needs.check.outputs.iosevkaVersion }}.zip">WebFont</a></b>&nbsp;(<b><a href="https://github.com/g-hanwen/Akvesoi/releases/download/v${{ needs.check.outputs.iosevkaVersion }}/PkgWebFont-Unhinted-AkvesoiType-${{ needs.check.outputs.iosevkaVersion }}.zip">Unhinted</a></b>)</td></tr>
             </table>
           files: |
-            src/release-archives/SuperTTC-AkvesoiCode-${{ needs.check.outputs.iosevkaVersion }}.zip
-            src/release-archives/PkgTTC-AkvesoiCode-${{ needs.check.outputs.iosevkaVersion }}.zip
+            src/release-archives/SuperTTC-Akvesoi-${{ needs.check.outputs.iosevkaVersion }}.zip
+            src/release-archives/PkgTTC-Akvesoi-${{ needs.check.outputs.iosevkaVersion }}.zip
             src/release-archives/SuperTTC-SGr-AkvesoiCode-${{ needs.check.outputs.iosevkaVersion }}.zip
             src/release-archives/PkgTTC-SGr-AkvesoiCode-${{ needs.check.outputs.iosevkaVersion }}.zip
             src/release-archives/PkgTTF-AkvesoiCode-${{ needs.check.outputs.iosevkaVersion }}.zip
