@@ -9,39 +9,36 @@ serifs = "sans"
 noCvSs = false
 exportGlyphNames = false
 
+[buildPlans.AkvesoiCode.variants]
+inherits = "ss14"
+
 [buildPlans.AkvesoiCode.variants.design]
-capital-d = "more-rounded-serifless"
-capital-j = "serifless"
-capital-w = "straight-flat-top-serifless"
-a = "double-storey-serifless"
-g = "double-storey"
-i = "tailed-serifed"
-j = "serifed"
-k = "straight-serifless"
-l = "tailed-serifed"
-t = "bent-hook"
-one = "base"
+three = "two-arcs"
+four = "semi-open-serifless"
 five = "oblique-arched-serifless"
 six = "straight-bar"
-eight = "crossing-asymmetric"
-punctuation-dot = "round"
+seven = "straight-serifless"
+zero = "slashed"
+capital-d = "more-rounded-serifless"
+capital-k = "straight-serifless"
+capital-w = "straight-vertical-sides-serifless"
+g = "single-storey-serifless"
+i = "serifed-flat-tailed"
+k = "straight-serifless"
+u = "toothed-serifless"
+w = "straight-vertical-sides-serifless"
+asterisk = "hex-low"
+paren = "normal"
 brace = "straight"
-guillemet = "straight"
 number-sign = "upright"
-ampersand = "upper-open"
-at = "compact"
-percent = "rings-continuous-slash"
-micro-sign = "tailed-serifless"
-lig-equal-chain = "with-notch"
-lig-plus-chain = "without-notch"
+ampersand = "closed"
+dollar = "open-cap"
+question = "smooth"
+pilcrow = "high"
+lig-ltgteq = "flat"
 
 [buildPlans.AkvesoiCode.ligations]
-inherits = "dlig"
-
-[buildPlans.AkvesoiCode.widths.Condensed]
-shape = 500
-menu = 3
-css = "condensed"
+enables = ["hash-hash", "underscore-underscore", "plus-plus-plus", "minus-minus-minus", "tilde-tilde", "brack-bar", "brace-bar", "html-comment", "llggeq", "llgg", "logic", "kern-bars", "kern-dotty", "slash-asterisk", "brst", "ltgt-slash-tag", "ltgt-diamond", "exeq", "lteq", "gteq", "eqeq", "trig", "center-op-trigger-equal-l", "center-op-trigger-equal-r", "arrow-l", "arrow-r", "arrow-lr" ]
 
 [buildPlans.AkvesoiCode.widths.Normal]
 shape = 600
@@ -57,36 +54,36 @@ serifs = "sans"
 noCvSs = false
 exportGlyphNames = true
 
+[buildPlans.AkvesoiTerm.variants]
+inherits = "ss14"
+
 [buildPlans.AkvesoiTerm.variants.design]
-capital-d = "more-rounded-serifless"
-capital-j = "serifless"
-capital-w = "straight-flat-top-serifless"
-a = "double-storey-serifless"
-g = "double-storey"
-i = "tailed-serifed"
-j = "serifed"
-k = "straight-serifless"
-l = "tailed-serifed"
-t = "bent-hook"
-one = "base"
+three = "two-arcs"
+four = "semi-open-serifless"
 five = "oblique-arched-serifless"
 six = "straight-bar"
-eight = "crossing-asymmetric"
-punctuation-dot = "round"
+seven = "straight-serifless"
+zero = "slashed"
+capital-d = "more-rounded-serifless"
+capital-k = "straight-serifless"
+capital-w = "straight-vertical-sides-serifless"
+g = "single-storey-serifless"
+i = "serifed-flat-tailed"
+k = "straight-serifless"
+u = "toothed-serifless"
+w = "straight-vertical-sides-serifless"
+asterisk = "hex-low"
+paren = "normal"
 brace = "straight"
-guillemet = "straight"
 number-sign = "upright"
-ampersand = "upper-open"
-at = "compact"
-percent = "rings-continuous-slash"
-micro-sign = "tailed-serifless"
-lig-equal-chain = "with-notch"
-lig-plus-chain = "without-notch"
+ampersand = "closed"
+dollar = "open-cap"
+question = "smooth"
+pilcrow = "high"
+lig-ltgteq = "flat"
 
-[buildPlans.AkvesoiTerm.widths.Condensed]
-shape = 500
-menu = 3
-css = "condensed"
+[buildPlans.AkvesoiTerm.ligations]
+enables = ["hash-hash", "underscore-underscore", "plus-plus-plus", "minus-minus-minus", "tilde-tilde", "brack-bar", "brace-bar", "html-comment", "llggeq", "llgg", "logic", "kern-bars", "kern-dotty", "slash-asterisk", "brst", "ltgt-slash-tag", "ltgt-diamond", "exeq", "lteq", "gteq", "eqeq", "trig", "center-op-trigger-equal-l", "center-op-trigger-equal-r", "arrow-l", "arrow-r", "arrow-lr" ]
 
 [buildPlans.AkvesoiTerm.widths.Normal]
 shape = 600
@@ -103,34 +100,33 @@ noCvSs = false
 exportGlyphNames = true
 noLigation = true
 
+[buildPlans.AkvesoiMono.variants]
+inherits = "ss14"
+
 [buildPlans.AkvesoiMono.variants.design]
-capital-d = "more-rounded-serifless"
-capital-j = "serifless"
-capital-w = "straight-flat-top-serifless"
-a = "double-storey-serifless"
-g = "double-storey"
-i = "tailed-serifed"
-j = "serifed"
-k = "straight-serifless"
-l = "tailed-serifed"
-t = "bent-hook"
-one = "base"
+three = "two-arcs"
+four = "semi-open-serifless"
 five = "oblique-arched-serifless"
 six = "straight-bar"
-eight = "crossing-asymmetric"
-punctuation-dot = "round"
+seven = "straight-serifless"
+zero = "slashed"
+capital-d = "more-rounded-serifless"
+capital-k = "straight-serifless"
+capital-w = "straight-vertical-sides-serifless"
+g = "single-storey-serifless"
+i = "serifed-flat-tailed"
+k = "straight-serifless"
+u = "toothed-serifless"
+w = "straight-vertical-sides-serifless"
+asterisk = "hex-low"
+paren = "normal"
 brace = "straight"
-guillemet = "straight"
 number-sign = "upright"
-ampersand = "upper-open"
-at = "compact"
-percent = "rings-continuous-slash"
-micro-sign = "tailed-serifless"
-
-[buildPlans.AkvesoiMono.widths.Condensed]
-shape = 500
-menu = 3
-css = "condensed"
+ampersand = "closed"
+dollar = "open-cap"
+question = "smooth"
+pilcrow = "high"
+lig-ltgteq = "flat"
 
 [buildPlans.AkvesoiMono.widths.Normal]
 shape = 600
@@ -148,32 +144,28 @@ noCvSs = false
 exportGlyphNames = false
 
 [buildPlans.AkvesoiType.variants.design]
-capital-d = "more-rounded-bilateral-serifed"
-capital-j = "serifed-both-sides"
-capital-w = "straight-flat-top-serifed"
-a = "double-storey-hook-inward-serifed-tailed"
-g = "single-storey-serifed"
-i = "tailed-serifed"
-j = "serifed"
-l = "tailed-serifed"
-one = "base"
+three = "flat-top-serifed"
 five = "oblique-arched-serifed"
-six = "straight-bar"
-eight = "crossing-asymmetric"
+capital-d = "more-rounded-bilateral-serifed"
+capital-k = "straight-serifless"
+capital-w = "straight-vertical-sides-serifed"
+i = "serifed-flat-tailed"
+w = "straight-vertical-sides-serifed"
 punctuation-dot = "square"
+asterisk = "hex-low"
+ascii-grave = "raised-turn-comma"
+ascii-single-quote = "raised-comma"
+paren = "normal"
 brace = "straight"
-guillemet = "straight"
 number-sign = "upright"
-ampersand = "upper-open"
-at = "compact"
-percent = "rings-continuous-slash"
-lig-equal-chain = "with-notch"
-lig-plus-chain = "without-notch"
+ampersand = "closed"
+dollar = "open-cap"
+question = "smooth"
+pilcrow = "high"
+lig-ltgteq = "flat"
 
-[buildPlans.AkvesoiType.widths.Condensed]
-shape = 500
-menu = 3
-css = "condensed"
+[buildPlans.AkvesoiType.ligations]
+enables = ["hash-hash", "underscore-underscore", "plus-plus-plus", "minus-minus-minus", "tilde-tilde", "brack-bar", "brace-bar", "html-comment", "llggeq", "llgg", "logic", "kern-bars", "kern-dotty", "slash-asterisk", "brst", "ltgt-slash-tag", "ltgt-diamond", "exeq", "lteq", "gteq", "eqeq", "trig", "center-op-trigger-equal-l", "center-op-trigger-equal-r", "arrow-l", "arrow-r", "arrow-lr" ]
 
 [buildPlans.AkvesoiType.widths.Normal]
 shape = 600
