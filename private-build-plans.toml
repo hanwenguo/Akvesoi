@@ -9,41 +9,44 @@ serifs = "sans"
 noCvSs = false
 exportGlyphNames = false
 
-[buildPlans.AkvesoiCode.variants]
-inherits = "ss14"
-
 [buildPlans.AkvesoiCode.variants.design]
 three = "two-arcs"
 four = "semi-open-serifless"
 five = "oblique-arched-serifless"
-six = "straight-bar"
+six = "closed-contour"
 seven = "straight-serifless"
-zero = "slashed"
-capital-d = "more-rounded-serifless"
-capital-k = "straight-serifless"
+eight = "crossing-asymmetric"
+nine = "closed-contour"
+zero = "tall-slashed"
+capital-g = "toothless-corner-serifless-hooked"
+capital-j = "serifless"
+capital-k = "symmetric-connected-serifless"
+capital-q = "crossing"
+capital-r = "standing-serifless"
 capital-w = "straight-vertical-sides-serifless"
+f = "flat-hook-serifless"
 g = "single-storey-serifless"
 i = "serifed-flat-tailed"
-k = "straight-serifless"
+j = "flat-hook-serifed"
+k = "symmetric-connected-serifless"
+r = "hookless-serifless"
+t = "flat-hook"
 u = "toothed-serifless"
 w = "straight-vertical-sides-serifless"
-asterisk = "hex-low"
-paren = "normal"
+lower-gamma = "straight"
+lower-mu = "toothed-serifless"
+asterisk = "penta-low"
+paren = "flat-arc"
 brace = "straight"
-number-sign = "upright"
-ampersand = "closed"
-dollar = "open-cap"
+guillemet = "straight"
+percent = "rings-continuous-slash"
+bar = "force-upright"
 question = "smooth"
 pilcrow = "high"
 lig-ltgteq = "flat"
 
 [buildPlans.AkvesoiCode.ligations]
 enables = ["hash-hash", "underscore-underscore", "plus-plus-plus", "minus-minus-minus", "tilde-tilde", "brack-bar", "brace-bar", "html-comment", "llggeq", "llgg", "logic", "kern-bars", "kern-dotty", "slash-asterisk", "brst", "ltgt-slash-tag", "ltgt-diamond", "exeq", "lteq", "gteq", "eqeq", "trig", "center-op-trigger-equal-l", "center-op-trigger-equal-r", "arrow-l", "arrow-r", "arrow-lr" ]
-
-[buildPlans.AkvesoiCode.widths.Normal]
-shape = 600
-menu = 5
-css = "normal"
 
 [buildPlans.AkvesoiTerm]
 family = "Akvesoi Term"
@@ -54,41 +57,44 @@ serifs = "sans"
 noCvSs = false
 exportGlyphNames = true
 
-[buildPlans.AkvesoiTerm.variants]
-inherits = "ss14"
-
 [buildPlans.AkvesoiTerm.variants.design]
 three = "two-arcs"
 four = "semi-open-serifless"
 five = "oblique-arched-serifless"
-six = "straight-bar"
+six = "closed-contour"
 seven = "straight-serifless"
-zero = "slashed"
-capital-d = "more-rounded-serifless"
-capital-k = "straight-serifless"
+eight = "crossing-asymmetric"
+nine = "closed-contour"
+zero = "tall-slashed"
+capital-g = "toothless-corner-serifless-hooked"
+capital-j = "serifless"
+capital-k = "symmetric-connected-serifless"
+capital-q = "crossing"
+capital-r = "standing-serifless"
 capital-w = "straight-vertical-sides-serifless"
+f = "flat-hook-serifless"
 g = "single-storey-serifless"
 i = "serifed-flat-tailed"
-k = "straight-serifless"
+j = "flat-hook-serifed"
+k = "symmetric-connected-serifless"
+r = "hookless-serifless"
+t = "flat-hook"
 u = "toothed-serifless"
 w = "straight-vertical-sides-serifless"
-asterisk = "hex-low"
-paren = "normal"
+lower-gamma = "straight"
+lower-mu = "toothed-serifless"
+asterisk = "penta-low"
+paren = "flat-arc"
 brace = "straight"
-number-sign = "upright"
-ampersand = "closed"
-dollar = "open-cap"
+guillemet = "straight"
+percent = "rings-continuous-slash"
+bar = "force-upright"
 question = "smooth"
 pilcrow = "high"
 lig-ltgteq = "flat"
 
 [buildPlans.AkvesoiTerm.ligations]
 enables = ["hash-hash", "underscore-underscore", "plus-plus-plus", "minus-minus-minus", "tilde-tilde", "brack-bar", "brace-bar", "html-comment", "llggeq", "llgg", "logic", "kern-bars", "kern-dotty", "slash-asterisk", "brst", "ltgt-slash-tag", "ltgt-diamond", "exeq", "lteq", "gteq", "eqeq", "trig", "center-op-trigger-equal-l", "center-op-trigger-equal-r", "arrow-l", "arrow-r", "arrow-lr" ]
-
-[buildPlans.AkvesoiTerm.widths.Normal]
-shape = 600
-menu = 5
-css = "normal"
 
 [buildPlans.AkvesoiMono]
 family = "Akvesoi Mono"
@@ -100,38 +106,41 @@ noCvSs = false
 exportGlyphNames = true
 noLigation = true
 
-[buildPlans.AkvesoiMono.variants]
-inherits = "ss14"
-
 [buildPlans.AkvesoiMono.variants.design]
 three = "two-arcs"
 four = "semi-open-serifless"
 five = "oblique-arched-serifless"
-six = "straight-bar"
+six = "closed-contour"
 seven = "straight-serifless"
-zero = "slashed"
-capital-d = "more-rounded-serifless"
-capital-k = "straight-serifless"
+eight = "crossing-asymmetric"
+nine = "closed-contour"
+zero = "tall-slashed"
+capital-g = "toothless-corner-serifless-hooked"
+capital-j = "serifless"
+capital-k = "symmetric-connected-serifless"
+capital-q = "crossing"
+capital-r = "standing-serifless"
 capital-w = "straight-vertical-sides-serifless"
+f = "flat-hook-serifless"
 g = "single-storey-serifless"
 i = "serifed-flat-tailed"
-k = "straight-serifless"
+j = "flat-hook-serifed"
+k = "symmetric-connected-serifless"
+r = "hookless-serifless"
+t = "flat-hook"
 u = "toothed-serifless"
 w = "straight-vertical-sides-serifless"
-asterisk = "hex-low"
-paren = "normal"
+lower-gamma = "straight"
+lower-mu = "toothed-serifless"
+asterisk = "penta-low"
+paren = "flat-arc"
 brace = "straight"
-number-sign = "upright"
-ampersand = "closed"
-dollar = "open-cap"
+guillemet = "straight"
+percent = "rings-continuous-slash"
+bar = "force-upright"
 question = "smooth"
 pilcrow = "high"
 lig-ltgteq = "flat"
-
-[buildPlans.AkvesoiMono.widths.Normal]
-shape = 600
-menu = 5
-css = "normal"
 
 [buildPlans.AkvesoiType]
 family = "Akvesoi Type"
@@ -146,23 +155,43 @@ exportGlyphNames = false
 [buildPlans.AkvesoiType.variants.design]
 three = "flat-top-serifed"
 five = "oblique-arched-serifed"
-capital-d = "more-rounded-bilateral-serifed"
-capital-k = "straight-serifless"
-capital-w = "straight-flat-top-serifed"
-i = "serifed-flat-tailed"
+six = "closed-contour"
+seven = "straight-serifless"
+eight = "crossing-asymmetric"
+nine = "closed-contour"
+zero = "tall-slashed"
+capital-d = "standard-bilateral-serifed"
+capital-g = "toothless-corner-serifed-capped"
+capital-j = "serifed-both-sides"
+capital-k = "symmetric-connected-serifed"
+capital-q = "crossing"
+capital-r = "standing-serifed"
+capital-w = "straight-vertical-sides-serifed"
+f = "flat-hook-serifed"
+g = "single-storey-serifed"
+i = "serifed"
+j = "flat-hook-serifed"
+k = "symmetric-connected-serifed"
+r = "hookless-serifed"
+t = "flat-hook"
+u = "toothed-serifed"
 w = "straight-flat-top-serifed"
-punctuation-dot = "square"
-asterisk = "hex-low"
+lower-gamma = "straight"
+lower-mu = "toothed-serifed"
+asterisk = "penta-low"
 ascii-grave = "raised-turn-comma"
 ascii-single-quote = "raised-comma"
-paren = "normal"
+paren = "flat-arc"
 brace = "straight"
+guillemet = "straight"
 number-sign = "upright"
-ampersand = "closed"
-dollar = "open-cap"
+percent = "rings-continuous-slash"
+bar = "force-upright"
 question = "smooth"
 pilcrow = "high"
 lig-ltgteq = "flat"
+punctuation-dot = "square"
+ampersand = "closed"
 
 [buildPlans.AkvesoiType.ligations]
 enables = ["hash-hash", "underscore-underscore", "plus-plus-plus", "minus-minus-minus", "tilde-tilde", "brack-bar", "brace-bar", "html-comment", "llggeq", "llgg", "logic", "kern-bars", "kern-dotty", "slash-asterisk", "brst", "ltgt-slash-tag", "ltgt-diamond", "exeq", "lteq", "gteq", "eqeq", "trig", "center-op-trigger-equal-l", "center-op-trigger-equal-r", "arrow-l", "arrow-r", "arrow-lr" ]
