@@ -13,9 +13,16 @@ The four sub-fonts are:
 - Akvesoi Mono, with spacing being `fixed` (every non-combining characters having the same width), no ligations, intended to be used in strict monospace occasions
 - Akvesoi Type, with spacing being `quasi-proportional-extension-only` (quasi-proportional but only wide letters like M and W will get expanded, inspired by [iA Writer Duo](https://ia.net/topics/in-search-of-the-perfect-writing-font)), intended to be used for creative writing
 
-Go to the [releases](https://github.com/g-hanwen/Akvesoi/releases) page to download built fonts. The version numbers follow Iosevka.
+Go to the [releases](https://github.com/hanwenguo/Akvesoi/releases) page to download built fonts. The version numbers follow Iosevka.
+
+## Homebrew
+
+Install all four families and all nine weights from the combined TTC archive:
+
+```sh
+brew install --cask hanwenguo/tap/font-akvesoi
+```
 
 ## Credits
 Iosevka, an incredible work
 iA Writer, for the duospace idea
-
