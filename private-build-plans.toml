@@ -192,7 +192,7 @@ css = "italic"
 [buildPlans.AkvesoiType]
 family = "Akvesoi Type"
 desc = "Slab-serif"
-spacing = "quasi-proportional-extension-only"
+spacing = "quasi-proportional"
 serifs = "slab"
 snapshotFamily = 'Akvesoi'
 snapshotFeature = {"NWID" = 0}
